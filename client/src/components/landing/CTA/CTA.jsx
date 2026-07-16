@@ -2,7 +2,7 @@ import Container from "../../ui/Container";
 
 const CTA = () => {
   return (
-    <section className="py-20">
+    <section className="py-8">
       <Container>
 
         <div className="overflow-hidden rounded-3xl border border-violet-500/20 bg-gradient-to-br from-violet-600/20 via-zinc-900 to-zinc-950 p-10 md:p-16">

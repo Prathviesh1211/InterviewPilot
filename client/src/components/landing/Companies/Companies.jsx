@@ -30,7 +30,7 @@ const Companies = () => {
   }, [emblaApi]);
 
   return (
-    <section className="py-20">
+    <section className="py-8">
       <Container>
         <div className="mx-auto max-w-3xl text-center">
 

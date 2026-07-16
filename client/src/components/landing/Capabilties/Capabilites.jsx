@@ -7,7 +7,7 @@ import { CAPABILITIES } from "../../../constants/capabilities";
 
 const Capabilities = () => {
   return (
-    <section className="py-14">
+    <section className="py-12">
       <Container>
 
         <SectionHeading

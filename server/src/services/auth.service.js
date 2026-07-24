@@ -9,7 +9,7 @@ export const registerUserService = async (userData) => {
   const existingUser = await User.findOne({ email });
 
   if (existingUser) {
-    throw new Error("User already exists");
+    throw new ApiError(409, "User already exists");
   }
 
   const hashedPassword = await bcrypt.hash(password, 10);
@@ -35,13 +35,13 @@ export const loginUserService = async (userData) => {
   const user = await User.findOne({ email }).select("+password");
 
   if (!user) {
-    throw new Error("Invalid credentials");
+    throw new ApiError(401, "Invalid credentials");
   }
 
   const isPasswordCorrect = await bcrypt.compare(password, user.password);
 
   if (!isPasswordCorrect) {
-    throw new Error("Invalid credentials");
+    throw new ApiError(401, "Invalid credentials");
   }
 
   const token = jwt.sign(
@@ -57,7 +57,13 @@ export const loginUserService = async (userData) => {
   );
 
   return {
-    user,
+    user: {
+      id: user._id,
+      fullName: user.fullName,
+      email: user.email,
+      role: user.role,
+      createdAt: user.createdAt,
+    },
     token,
   };
 };

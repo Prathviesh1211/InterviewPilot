@@ -1,13 +1,12 @@
 import Container from "../../ui/Container";
 import Card from "../../ui/Card";
 import SectionHeading from "../Problem/SectionHeading";
-
 import { ArrowRight } from "lucide-react";
 import { CAPABILITIES } from "../../../constants/capabilities";
 
 const Capabilities = () => {
   return (
-    <section className="py-12">
+    <section className="py-12" id="features">
       <Container>
 
         <SectionHeading

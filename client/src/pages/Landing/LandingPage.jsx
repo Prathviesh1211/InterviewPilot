@@ -8,16 +8,20 @@ import Companies from "../../components/landing/Companies/Companies"
 import FAQ from "../../components/landing/FAQ/FAQ";
 import CTA from "../../components/landing/CTA/CTA";
 import Footer from "../../components/common/Footer";
+import Divider from  "../../components/common/Divider"
 
 const LandingPage = () => {
   return (
     <>
+    
       <Navbar />
       <Hero />
       <Capabilities/>
       <Showcase/>
+      <Divider />
       <HowItWorks/>
       <Companies />
+      <Divider />
       <FAQ />
       <CTA/>
       <Footer />

@@ -3,7 +3,7 @@ import { HOW_IT_WORKS } from "../../../constants/howItWorks";
 
 const HowItWorks = () => {
   return (
-    <section className="pt-4 pb-12">
+    <section className="pt-8 pb-12" id="how-it-works">
       <Container>
 
         <div className="mx-auto max-w-3xl text-center">

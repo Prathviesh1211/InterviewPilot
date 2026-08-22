@@ -6,7 +6,7 @@ const CompanyCard = ({ company }) => {
 
       {/* Logo */}
 
-      <div className="flex h-16 items-center">
+      <div className="flex h-18 items-center">
         <img
           src={company.logo}
           alt={company.name}

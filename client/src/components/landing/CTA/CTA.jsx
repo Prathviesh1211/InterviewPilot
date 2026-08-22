@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Container from "../../ui/Container";
 
 const CTA = () => {
@@ -19,9 +20,11 @@ const CTA = () => {
               practice.
             </p>
 
+          <Link to="/register">
             <button className="mt-10 rounded-xl bg-violet-600 px-8 py-4 font-semibold transition-all duration-300 hover:bg-violet-500 hover:scale-105">
               Get Started
             </button>
+          </Link>
 
           </div>
 

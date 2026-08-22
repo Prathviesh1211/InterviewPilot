@@ -8,8 +8,10 @@ import Card from "../../ui/Card";
 
 const Showcase = () => {
   return (
-    <section className="py-20">
+    <section className="pt-12 pb-12">
+      
       <Container>
+        
         <div className="grid items-center gap-16 lg:grid-cols-2">
 
           {/* LEFT */}

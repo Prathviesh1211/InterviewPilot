@@ -5,20 +5,23 @@ import HeroHeading from "./HeroHeading";
 import HeroButtons from "./HeroButtons";
 import HeroFeatures from "./HeroFeatures";
 import HeroDashboard from "./HeroDashboard";
-
+import BackgroundGlow from "../../../layouts/BackgroundGlow"
 import { HERO } from "../../../constants/hero";
 
 const Hero = () => {
   return (
-    <section className="relative overflow-hidden pt-10 pb-10 lg:pt-14 lg:pb-14">
+    <section className="relative overflow-hidden pt-8 pb-10 lg:pt-8 lg:pb-12">
 
       {/* Background Glow */}
 
-      <div className="absolute left-1/2 top-20 h-96 w-96 -translate-x-1/2 rounded-full bg-violet-600/20 blur-[140px]" />
+      {/* <div className="absolute left-1/2 top-20 h-96 w-96 -translate-x-1/2 rounded-full bg-violet-600/20 blur-[140px]" />
+       */}
+
+        <BackgroundGlow />
 
       <Container>
 
-        <div className="grid items-center gap-20 lg:grid-cols-2">
+        <div className="grid items-center gap-40 lg:grid-cols-2">
 
           {/* LEFT */}
 
@@ -26,7 +29,7 @@ const Hero = () => {
 
             <HeroBadge />
 
-            <div className="mt-8">
+            <div className="mt-5">
 
               <HeroHeading />
 

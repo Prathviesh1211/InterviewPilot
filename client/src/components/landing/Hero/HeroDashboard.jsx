@@ -5,7 +5,7 @@ import Progress from "../../ui/Progress";
 
 const HeroDashboard = () => {
   return (
-    <Card className="w-full max-w-md space-y-6">
+    <Card className="w-full max-w-md space-y-5">
 
       {/* Readiness */}
 

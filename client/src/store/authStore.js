@@ -10,17 +10,18 @@ const useAuthStore = create((set) => ({
   user: null,
   isAuthenticated: false,
   loading: false,
+  authLoading: true,
 
   register: async (userData) => {
     set({ loading: true });
     try {
       const data = await registerUser(userData);
       set({
-        user:data.user,
-        isAuthenticated:true,
-        loading:false
-      })
-      return data
+        user: data.user,
+        isAuthenticated: true,
+        loading: false,
+      });
+      return data;
     } catch (error) {
       set({ loading: false });
       throw error;
@@ -33,7 +34,7 @@ const useAuthStore = create((set) => ({
       const data = await loginUser(credentials);
 
       set({
-        user: data.user,
+        user: data.data,
         isAuthenticated: true,
         loading: false,
       });
@@ -44,47 +45,47 @@ const useAuthStore = create((set) => ({
       throw error;
     }
   },
-    fetchUser: async () => {
-  set({ loading: true });
+  fetchUser: async () => {
+    set({ authLoading: true });
 
-  try {
-    const data = await getCurrentUser();
+    try {
+      const data = await getCurrentUser();
 
-    set({
-      user: data.user,
-      isAuthenticated: true,
-      loading: false,
-    });
+      set({
+        user: data.data,
+        isAuthenticated: true,
+        authLoading: false,
+      });
 
-    return data;
-  } catch (error) {
-    set({
-      user: null,
-      isAuthenticated: false,
-      loading: false,
-    });
+      return data;
+    } catch (error) {
+      set({
+        user: null,
+        isAuthenticated: false,
+        authLoading: false,
+      });
 
-    throw error;
-  }
-},
-logout: async () => {
-  set({ loading: true });
+      throw error;
+    }
+  },
+  logout: async () => {
+    set({ loading: true });
 
-  try {
-    const data = await logoutUser();
+    try {
+      const data = await logoutUser();
 
-    set({
-      user: null,
-      isAuthenticated: false,
-      loading: false,
-    });
+      set({
+        user: null,
+        isAuthenticated: false,
+        loading: false,
+      });
 
-    return data;
-  } catch (error) {
-    set({ loading: false });
-    throw error;
-  }
-},
+      return data;
+    } catch (error) {
+      set({ loading: false });
+      throw error;
+    }
+  },
 }));
 
 export default useAuthStore;

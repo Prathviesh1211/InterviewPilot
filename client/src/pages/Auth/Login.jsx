@@ -1,11 +1,12 @@
 import React from 'react'
+import AuthLayout from '../../layouts/AuthLayout'
+import LoginForm from '../../components/auth/LoginForm'
 
 const Login = () => {
   return (
-    <div>
-      Lund lega? bsdk login kerega
-      
-    </div>
+   <AuthLayout>
+      <LoginForm />
+    </AuthLayout>
   )
 }
 
